@@ -1,49 +1,35 @@
-#Minha Loja - RonnickGames
+# Minha Loja - RonnickGames
 
-Aluno(a): Nícolas Ronnick da Silva Soares - 202612010008
+**Aluno:** Nícolas Ronnick da Silva Soares - 202612010008
 
-Como executar: node loja.js
+## Como executar
 
-listarProdutos(lista)
+No terminal do VS Code, execute o comando:
 
-Exibe todos os produtos cadastrados, incluindo nome, categoria, preço, quantidade em estoque e unidades vendidas.
+```bash
+node loja.js
+```
 
-cadastrarProduto(lista, nome, categoria, preco, quantidade)
+## Funcionalidades
 
-Cadastra um novo produto, formata seu nome e inicializa a quantidade de vendas em zero.
+- **`listarProdutos(lista)`**: lista todos os produtos cadastrados, exibindo nome, categoria, preço, quantidade em estoque e unidades vendidas.
 
-calcularValorEstoque(lista)
+- **`cadastrarProduto(lista, nome, categoria, preco, quantidade)`**: cadastra um novo produto, adicionando-o ao array com a quantidade de vendas inicial igual a zero.
 
-Calcula e retorna o valor total do estoque, multiplicando o preço pela quantidade de cada produto.
+- **`calcularValorEstoque(lista)`**: calcula e retorna o valor total do estoque, multiplicando o preço pela quantidade de cada produto.
 
-buscarProduto(lista, termo)
+- **`buscarProduto(lista, termo)`**: busca um produto pelo nome ou por parte dele, ignorando diferenças entre letras maiúsculas e minúsculas.
 
-Procura um produto pelo nome, ignorando diferenças entre letras maiúsculas e minúsculas, e retorna o produto encontrado ou null.
+- **`produtosEmFalta(lista, minimo)`**: retorna uma lista dos produtos que possuem quantidade em estoque inferior ao mínimo informado.
 
-produtosEmFalta(lista, minimo)
+- **`aplicarDesconto(lista, categoria, percentual)`**: aplica um desconto percentual aos produtos de uma categoria específica e retorna a quantidade de produtos alterados.
 
-Retorna um novo array contendo os produtos cuja quantidade em estoque é inferior ao mínimo informado.
+- **`registrarVenda(lista, nome, quantidade)`**: registra uma venda, atualizando a quantidade em estoque e o total de unidades vendidas. Retorna `true` se a venda for realizada e `false` caso contrário.
 
-aplicarDesconto(lista, categoria, percentual)
+- **`formatarNome(texto)`**: remove espaços desnecessários no início e no fim e padroniza o texto, deixando a primeira letra maiúscula e as demais minúsculas.
 
-Aplica um desconto percentual aos produtos de uma categoria específica e retorna a quantidade de produtos alterados.
+- **`converterParaJSON(lista)`**: converte a lista de produtos em um texto JSON utilizando `JSON.stringify()`.
 
-registrarVenda(lista, nome, quantidade)
+- **`lerJSON(texto)`**: recupera os dados do texto JSON e os transforma novamente em uma estrutura JavaScript utilizando `JSON.parse()`.
 
-Registra uma venda, atualiza o estoque e a quantidade de unidades vendidas. Retorna true se a venda for realizada ou false caso contrário.
-
-formatarNome(texto)
-
-Remove espaços no início e no fim do texto e transforma a primeira letra em maiúscula e as demais em minúsculas.
-
-converterParaJSON(lista)
-
-Converte o array de produtos em uma string no formato JSON usando JSON.stringify().
-
-lerJSON(texto)
-
-Converte um texto JSON de volta para uma estrutura JavaScript usando JSON.parse().
-
-gerarRelatorio(nome, lista)
-
-Exibe o relatório da loja com o nome em maiúsculas, a quantidade de produtos, o valor total do estoque e a lista de produtos com estoque baixo.
+- **`gerarRelatorio(nome, lista)`**: gera um relatório com o nome da loja em maiúsculas, a quantidade de produtos cadastrados, o valor total do estoque e a lista de produtos com estoque baixo.
